@@ -1,0 +1,21 @@
+# MATLAB temporary files
+*.asv
+*.m~
+
+# Data files (private/large)
+*.dat
+data/*.mat
+!data/.gitkeep
+
+# Output files
+*.png
+*.jpg
+*.jpeg
+*.fig
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary directories
+/tmp/
