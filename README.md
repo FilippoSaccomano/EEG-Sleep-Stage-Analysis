@@ -30,24 +30,24 @@ This project implements an automated system for analyzing EEG (electroencephalog
 
 ```
 EEG-Sleep-Stage-Analysis/
-├── README.md                 # This file
+├── README.md                 # This file - project overview and documentation
 ├── DATA_FORMAT.md           # Data requirements and sources
-├── main_pipeline.mlx        # Main pipeline script (run everything)
-├── Sgnal/
-│   ├── Copy_of_exercise_2.mlx   # Original analysis notebook
-│   ├── data.mat             # Example data (not included - see DATA_FORMAT.md)
-│   └── Functions/           # MATLAB function library
-│       ├── data_acquisition.m           # Load EEG data from .mat file
-│       ├── plot_eeg_fft.m              # Visualize raw signal and FFT
-│       ├── double_notch_filter.m       # Remove 1Hz and 2Hz noise
-│       ├── eeg_segmentation.m          # Divide signal into epochs
-│       ├── psd_calc.m                  # Calculate power spectral density
-│       ├── struct_def.m                # Initialize feature structures
-│       ├── power_calc.m                # Calculate band power features
-│       ├── perc_calc.m                 # Calculate relative power percentages
-│       ├── sample_entropy.m            # Calculate sample entropy
-│       ├── filtered_sleep_stages_def.m # Smooth sleep stage transitions
-│       └── hypnogram.m                 # Generate hypnogram visualization
+├── main_pipeline.m          # Main pipeline script (run everything)
+├── original_analysis.mlx    # Original analysis notebook (reference)
+├── data/
+│   └── data.mat             # Example data (not included - see DATA_FORMAT.md)
+└── src/                     # MATLAB function library
+    ├── data_acquisition.m           # Load EEG data from .mat file
+    ├── plot_eeg_fft.m              # Visualize raw signal and FFT
+    ├── double_notch_filter.m       # Remove 1Hz and 2Hz noise
+    ├── eeg_segmentation.m          # Divide signal into epochs
+    ├── psd_calc.m                  # Calculate power spectral density
+    ├── struct_def.m                # Initialize feature structures
+    ├── power_calc.m                # Calculate band power features
+    ├── perc_calc.m                 # Calculate relative power percentages
+    ├── sample_entropy.m            # Calculate sample entropy
+    ├── filtered_sleep_stages_def.m # Smooth sleep stage transitions
+    └── hypnogram.m                 # Generate hypnogram visualization
 ```
 
 ## Quick Start
@@ -66,7 +66,7 @@ git clone https://github.com/FilippoSaccomano/EEG-Sleep-Stage-Analysis.git
 cd EEG-Sleep-Stage-Analysis
 ```
 
-2. Prepare your data file following the format in [DATA_FORMAT.md](DATA_FORMAT.md)
+2. Prepare your data file following the format in [DATA_FORMAT.md](DATA_FORMAT.md) and place it in the `data/` directory
 
 ### Usage
 
@@ -74,22 +74,27 @@ cd EEG-Sleep-Stage-Analysis
 
 Open MATLAB and run the main pipeline:
 ```matlab
-% Open and run the main pipeline script
-open('main_pipeline.mlx')
-% Then click "Run" in MATLAB Live Editor
+% Run the main pipeline script
+main_pipeline
+```
+
+Or open the script in the MATLAB editor:
+```matlab
+open('main_pipeline.m')
+% Then click "Run" in MATLAB Editor
 ```
 
 #### Option 2: Run Step by Step
 
 ```matlab
 % Add functions to path
-addpath('Sgnal/Functions');
+addpath('src');
 
 % Set parameters
-file_name = "Sgnal/data.mat";
+file_name = "data/data.mat";
 epoch_duration = 30;  % seconds
 
-% Run the pipeline (see main_pipeline.mlx for complete code)
+% Run the pipeline (see main_pipeline.m for complete code)
 [EEG, fs, t] = data_acquisition(file_name);
 % ... (continue with other steps)
 ```
@@ -144,14 +149,15 @@ The pipeline generates several figures:
 
 ## Configuration Parameters
 
-Key parameters you can adjust in `main_pipeline.mlx`:
+Key parameters you can adjust in `main_pipeline.m`:
 
 ```matlab
-epoch_duration = 30;      % Epoch length in seconds
-window_dim = 5;           % PSD window dimension
-min_duration = 6;         % Minimum epochs for stage smoothing
-m = 2;                    % Entropy embedding dimension
-r = 0.2;                  % Entropy tolerance
+file_name = "data/data.mat";  % Path to your data file
+epoch_duration = 30;          % Epoch length in seconds
+window_dim = 5;               % PSD window dimension
+min_duration = 6;             % Minimum epochs for stage smoothing
+m = 2;                        % Entropy embedding dimension
+r = 0.2;                      % Entropy tolerance
 ```
 
 ## Data Requirements

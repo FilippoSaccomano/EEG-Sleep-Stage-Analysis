@@ -40,11 +40,11 @@ clear variables     % Clear workspace
 tic()              % Start timer
 
 % Add functions to MATLAB path
-addpath('Sgnal/Functions');
+addpath('src');
 
 %% CONFIGURATION PARAMETERS
 % Input data file
-file_name = "Sgnal/data.mat";
+file_name = "data/data.mat";
 
 % Epoch configuration
 epoch_duration = 30;  % Duration of each epoch in seconds (standard for sleep analysis)

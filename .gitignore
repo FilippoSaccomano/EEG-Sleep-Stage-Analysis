@@ -4,7 +4,8 @@
 
 # Data files (private/large)
 *.dat
-*.mat
+data/*.mat
+!data/.gitkeep
 
 # Output files
 *.png

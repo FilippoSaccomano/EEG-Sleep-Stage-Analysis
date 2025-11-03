@@ -1,0 +1,10 @@
+# Data Directory
+
+Place your EEG data files here.
+
+The data file should be in MATLAB .mat format with the structure described in [DATA_FORMAT.md](../DATA_FORMAT.md).
+
+Example:
+- `data.mat` - Your EEG sleep recording data
+
+Note: Data files are excluded from version control (see `.gitignore`).
