@@ -25,7 +25,7 @@
 %   - Sleep stage statistics
 %
 % To use this script:
-%   1. Place your data.mat file in the Sgnal/ directory
+%   1. Place your data.mat file in the data/ directory
 %   2. Ensure data.mat contains 'dati' struct with 'eeg' and 'fs' fields
 %   3. Run this script in MATLAB
 %
