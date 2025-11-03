@@ -31,7 +31,9 @@
 %
 % For data format requirements, see DATA_FORMAT.md
 %
-% Author: Filippo Saccomano
+% Authors: Filippo Saccomano, Daniele Uras, Gabriele Carta
+% Institution: Politecnico di Milano - Biomedical Engineering (BIF)
+% Course: Signal Processing and Medical Images
 % Last modified: 2025
 
 %% INITIALIZATION

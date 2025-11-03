@@ -6,6 +6,8 @@ An automated MATLAB pipeline for processing and classifying EEG sleep stages usi
 
 This project implements an automated system for analyzing EEG (electroencephalogram) signals to classify sleep stages. The pipeline processes raw EEG data through filtering, segmentation, feature extraction, and classification to generate a hypnogram showing the progression of sleep stages over time.
 
+**Academic Context**: This project was developed as part of the **Signal Processing and Medical Images** course at **Politecnico di Milano**, Faculty of Engineering, Biomedical Engineering (BIF) program.
+
 ### Sleep Stages Detected
 
 - **Awake**: Characterized by high alpha and beta wave activity
@@ -250,9 +252,13 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is open source and available under the MIT License.
 
-## Author
+## Authors
 
-Filippo Saccomano
+- Filippo Saccomano
+- Daniele Uras
+- Gabriele Carta
+
+**Politecnico di Milano** - Biomedical Engineering (BIF)
 
 ## Acknowledgments
 
